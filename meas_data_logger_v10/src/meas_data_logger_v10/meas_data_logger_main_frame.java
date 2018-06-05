@@ -39,7 +39,7 @@ public class meas_data_logger_main_frame extends JFrame {
 	//private AccessDatabase myDatabaseObject = new AccessDatabase("C:/Dropbox/measData.mdb","measVoltageDataTbl");
 	
 	//private AccessDatabase myDatabaseObject = new AccessDatabase("C:/Dropbox/measData.mdb","measDataSheetTbl");
-	  public static AccessDatabase myDatabaseObject = new AccessDatabase("C:/Dropbox/meas_data_logger/measData.mdb","measVoltageDataTbl");
+	  public static AccessDatabase myDatabaseObject = new AccessDatabase("C:/Dropbox/meas_data_logger_2/measData.mdb","measVoltageDataTbl");
 	//private AccessDatabase myCurrentDataObject = new AccessDatabase("C:/Dropbox/measData.mdb","measCurrentDataTbl");
 	
 	private final JLabel lblMrsProfil = new JLabel("M\u00E9r\u00E9s profil");
@@ -50,6 +50,7 @@ public class meas_data_logger_main_frame extends JFrame {
     
 	public String[] generatedFieldNames;
 	private final JCheckBox chckbxOnlineAdatokRajzolsa = new JCheckBox("Online adatok rajzol\u00E1sa");
+	private final JLabel lblMeasdatalogger = new JLabel("meas_data_logger_2");
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -91,6 +92,8 @@ public class meas_data_logger_main_frame extends JFrame {
 
 		
 		contentPane.add(chckbxOnlineAdatokRajzolsa);
+		
+		contentPane.add(lblMeasdatalogger);
 		
 		contentPane.add(panelCards);
 		panelCards.setLayout(new CardLayout(0, 0));

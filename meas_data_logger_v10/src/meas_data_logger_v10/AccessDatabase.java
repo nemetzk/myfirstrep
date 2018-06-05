@@ -5,6 +5,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
  
 public class AccessDatabase {
     Connection connection = null;
@@ -117,8 +121,8 @@ public class AccessDatabase {
 		int max_data_idx = 0;
 		int i;
 		
-		if (valueArrayFunHead.length>254) {
-			max_data_idx=254;
+		if (valueArrayFunHead.length>250) {//@@ ez 254 volt
+			max_data_idx=250;
 			
 		}
 		
@@ -138,8 +142,15 @@ public class AccessDatabase {
 			}
 			 
 		}
-		 System.out.println(commandString+" (" + fieldString + ") " + "VALUES" + " (" + valueString + ")");
-		       runStatement(commandString+" (" + fieldString + ") " + "VALUES" + " (" + valueString + ")");
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+		Date date = new Date();
+		String myDate = dateFormat.format(date);
+		
+		DateFormat dateFormatTime = new SimpleDateFormat("HH:mm:ss");
+		String mytime = dateFormatTime.format(date);
+		
+		 System.out.println(commandString+" (" + "datum," + "ido," + fieldString + ") " + "VALUES" + " (" +myDate+","+"myTime"+","+ valueString + ")");
+		       runStatement(commandString+" (" + "datum," + "ido," + fieldString + ") " + "VALUES" + " (" +myDate+","+"myTime"+","+ valueString + ")");//@@ ide csempesztem be a datumot meg az idot
 	}
 	
 	
