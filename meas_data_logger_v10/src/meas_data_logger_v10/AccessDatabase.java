@@ -126,14 +126,14 @@ public class AccessDatabase {
 			
 		}
 		
-		for (i=0;i<max_data_idx;i++) {
-			if (i!=0) fieldString+=",";
+		for (i=3;i<max_data_idx;i++) {
+			if (i!=3) fieldString+=",";
 			fieldString+= fieldArrayFunHead[i]; 
 		}
 		
-		for (i=0;i<max_data_idx;i++) {
+		for (i=3;i<max_data_idx;i++) {
 			
-			if (i!=0) {
+			if (i!=3) {
 				valueString+=",";
 				valueString += String.valueOf(valueArrayFunHead[i]);
 			}
@@ -142,15 +142,15 @@ public class AccessDatabase {
 			}
 			 
 		}
-		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date date = new Date();
 		String myDate = dateFormat.format(date);
 		
 		DateFormat dateFormatTime = new SimpleDateFormat("HH:mm:ss");
-		String mytime = dateFormatTime.format(date);
+		String myTime = dateFormatTime.format(date);
 		
-		 System.out.println(commandString+" (" + "datum," + "ido," + fieldString + ") " + "VALUES" + " (" +myDate+","+"myTime"+","+ valueString + ")");
-		       runStatement(commandString+" (" + "datum," + "ido," + fieldString + ") " + "VALUES" + " (" +myDate+","+"myTime"+","+ valueString + ")");//@@ ide csempesztem be a datumot meg az idot
+		 System.out.println(commandString+" (" + "datum," + "ido," + fieldString + ") " + "VALUES" + " (#" + myDate+"#,#"+myTime+"#,"+ valueString + ")");
+		       runStatement(commandString+" (" + "datum," + "ido," + fieldString + ") " + "VALUES" + " (#" + myDate+"#,#"+myTime+"#,"+ valueString + ")");//@@ ide csempesztem be a datumot meg az idot
 	}
 	
 	

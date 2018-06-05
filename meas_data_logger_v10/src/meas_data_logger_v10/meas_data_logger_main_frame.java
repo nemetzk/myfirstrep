@@ -38,9 +38,8 @@ public class meas_data_logger_main_frame extends JFrame {
 	//private AccessDatabase myDatabaseObject = new AccessDatabase("C:/Dropbox/AgeRange.mdb","tblEmployees");
 	//private AccessDatabase myDatabaseObject = new AccessDatabase("C:/Dropbox/measData.mdb","measVoltageDataTbl");
 	
-	//private AccessDatabase myDatabaseObject = new AccessDatabase("C:/Dropbox/measData.mdb","measDataSheetTbl");
-	  public static AccessDatabase myDatabaseObject = new AccessDatabase("C:/Dropbox/meas_data_logger_2/measData.mdb","measVoltageDataTbl");
-	//private AccessDatabase myCurrentDataObject = new AccessDatabase("C:/Dropbox/measData.mdb","measCurrentDataTbl");
+  public static AccessDatabase myDatabaseObject = new AccessDatabase("C:/Dropbox/meas_data_logger_2/measData.mdb","measVoltageDataTbl");
+
 	
 	private final JLabel lblMrsProfil = new JLabel("M\u00E9r\u00E9s profil");
 	private final JLabel lblKrtyaBelltsok = new JLabel("K\u00E1rtya be\u00E1ll\u00EDt\u00E1sok");
